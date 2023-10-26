@@ -1,0 +1,51 @@
+<div class="container mt-3">
+    <!-- Title with user role -->
+
+
+
+    <!-- Logout button (with translation) -->
+
+    <!-- Add New button (with translation) - shown only for admin -->
+    <button class="btn btn-primary px-4 mx-2" (click)="addNew(formTemplate)">
+        {{ 'AddNew' | translate }}</button>
+        
+        <button class="btn btn-info mx-1" (click)="changeLanguage()">
+            {{ lang === 'en' ? 'عربي' : 'English' }}
+        </button>
+
+    <div>
+        <!-- Filter input field -->
+        <input type="text" class="form-control" style="padding:8px;margin:15px auto;width:30%;"
+            placeholder="{{ 'FilterNameColumn' | translate }}" (keyup)="updateFilter($event)" />
+
+        <!-- Data table -->
+        <ngx-datatable #table class="material"  [columns]="columns" [columnMode]="ColumnMode.force" [headerHeight]="70"
+            [footerHeight]="70" rowHeight="auto" [limit]="5" [rows]="rows">
+        </ngx-datatable>
+    </div>
+</div>
+
+<!-- Header template for table columns (with translation) -->
+<ng-template #hdrTpl let-column="column">{{ column.name | translate }}</ng-template>
+
+<!-- Edit and Delete buttons template (with translation) -->
+<ng-template #editTmpl let-row="row" let-value="value">
+        <button class="btn btn-sm btn-dark m-1" (click)="updateDat(row, formTemplate)">{{ 'Update' | translate }}</button>
+        <button class="btn btn-sm btn-danger m-1" (click)="deleteData(row)">{{ 'Delete' | translate }}</button>
+</ng-template>
+
+
+
+<!-- Form template for adding/updating user (with translation) -->
+<ng-template #formTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{selectedclient ? 'Update' : 'Add'}} User</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <client-form [client]="selectedclient" (close)="modalRef?.hide()"
+            (savedUser)="saveClientData($event)"></client-form>
+    </div>
+</ng-template>

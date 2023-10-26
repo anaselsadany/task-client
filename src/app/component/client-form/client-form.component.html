@@ -1,0 +1,88 @@
+<form [formGroup]="clientForm" (ngSubmit)="save()">
+    <div class="row">
+
+        <div class="col-md-6 mb-3">
+            <!-- ClientNo input field -->
+            <label for="validationServer033">{{ 'ClientNo' | translate }}</label>
+            <input type="text" class="form-control" id="validationServer033" placeholder="{{ 'ClientNo' | translate }}"
+                formControlName="clientNo">
+        </div>
+        <div class="col-md-6 mb-3">
+            <!-- NameAr input field -->
+            <label for="validationServer013">{{ 'NameAr' | translate }}</label>
+            <input type="text" class="form-control"
+                [ngClass]="{'is-invalid': clientForm.get('nameAr')?.touched && clientForm.get('nameAr')?.errors}"
+                id="validationServer013" placeholder="{{ 'Name' | translate }}" formControlName="nameAr">
+            <div class="invalid-feedback" *ngIf="clientForm.get('nameAr')?.touched && clientForm.get('nameAr')?.errors">
+                {{ 'FieldIsRequired' | translate }}
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <!-- NameEn input field -->
+            <label for="validationServer013">{{ 'NameEn' | translate }}</label>
+            <input type="text" class="form-control"
+                [ngClass]="{'is-invalid': clientForm.get('nameEn')?.touched && clientForm.get('nameEn')?.errors}"
+                id="validationServer013" placeholder="{{ 'Name' | translate }}" formControlName="nameEn">
+            <div class="invalid-feedback" *ngIf="clientForm.get('nameEn')?.touched && clientForm.get('nameEn')?.errors">
+                {{ 'FieldIsRequired' | translate }}
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <!-- Email input field -->
+            <label for="validationServer023">{{ 'Email' | translate }}</label>
+            <input type="email" class="form-control" id="validationServer023" placeholder="{{ 'Email' | translate }}"
+                formControlName="email">
+            <div *ngIf="clientForm.get('email')?.touched && clientForm.get('email')?.hasError('email')"
+                class="text-danger">
+                {{ 'EmailValidation' | translate }}
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <!-- Phone input field -->
+            <label for="validationServer033">{{ 'Phone' | translate }}</label>
+            <input type="tel" class="form-control" id="validationServer033" placeholder="{{ 'Phone' | translate }}"
+                formControlName="phone" pattern="\d{11}">
+            <div *ngIf="clientForm.get('phone')?.touched && clientForm.get('phone')?.hasError('pattern')"
+                class="text-danger">
+                {{ 'PhoneValidation' | translate }}
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <!-- address input field -->
+            <label for="validationServer033">{{ 'address' | translate }}</label>
+            <input type="text" class="form-control" id="validationServer033" placeholder="{{ 'address' | translate }}"
+                formControlName="address">
+        </div>
+        <div class="col-md-6 mb-3">
+            <!-- buildingNo input field -->
+            <label for="validationServer033">{{ 'buildingNo' | translate }}</label>
+            <input type="text" class="form-control" id="validationServer033"
+                placeholder="{{ 'buildingNo' | translate }}" formControlName="buildingNo">
+        </div>
+        <div class="col-md-6 mb-3">
+            <!-- City input field -->
+            <label for="validationServer033">{{ 'City' | translate }}</label>
+            <input type="text" class="form-control" id="validationServer033" placeholder="{{ 'City' | translate }}"
+                formControlName="city">
+        </div>
+        <div class="col-md-6 mb-3">
+            <!-- Country input field -->
+            <label for="validationServer033">{{ 'Country' | translate }}</label>
+            <input type="text" class="form-control" id="validationServer033" placeholder="{{ 'Country' | translate }}"
+                formControlName="country">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+            <!-- Submit button (disabled when the form is invalid) -->
+            <button class="btn btn-primary px-4 mx-3" type="submit" [disabled]="clientForm.invalid">
+                {{ 'Submit' | translate }}
+            </button>
+            <!-- Discard button -->
+            <button class="btn btn-danger px-4 mx-3" type="button" (click)="close.emit(true)">
+                {{ 'Discard' | translate }}
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,24 @@
+{
+    "Country": "Country",
+    "City": "City",
+    "Address": "Address",
+    "NameEn": "NameEn",
+    "NameAr": "NameAr",
+    "ClientNo": "ClientNo",
+    "AddNew": "Add New",
+    "Delete": "Delete",
+    "Update": "Update",
+    "Action": "Action",
+    "Name": "Name",
+    "Email": "Email",
+    "Phone": "Phone",
+    "clientDeletedSuccess": "User Deleted Successfully",
+    "Submit": "Submit",
+    "Discard": "Discard",
+    "FieldIsRequired": "Field is required",
+    "EmailValidation": "Please enter a valid email address",
+    "PhoneValidation": "Please enter a valid phone number",
+    "clientSavedSuccessfully": "User Saved Successfully",
+    "FilterNameColumn": "Filter the name column..."
+
+}

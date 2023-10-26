@@ -1,0 +1,22 @@
+{
+    "Country": "الدولة",
+    "City": "المدينة",
+    "Address": "العنوان",
+    "NameEn": "الاسم بالانجليزى",
+    "NameAr": "الاسم بالعربى",
+    "ClientNo": "رقم العميل",
+    "AddNew": "إضافة جديد",
+    "Delete": "حذف",
+    "Update": "تعديل",
+    "Email": "البريد الالكترونى",
+    "Phone": "رقم الهاتف",
+    "Action": "الاجراءات",
+    "clientDeletedSuccess": "تم حذف المستخدم بنجاح",
+    "Submit": "حفظ",
+    "Discard": "تجاهل",
+    "FieldIsRequired": "هذا الحقل مطلوب",
+    "EmailValidation": "الرجاء إدخال عنوان بريد إلكتروني صحيح",
+    "PhoneValidation": "الرجاء إدخال رقم هاتف صحيح",
+    "clientSavedSuccessfully": "تم حفظ المستخدم بنجاح",
+    "FilterNameColumn": "قم بتصفية عمود الاسم..."
+}
